@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.background {
+  display: flex;
+  background: rgb(86, 11, 173);
+  background: linear-gradient(
+    90deg,
+    rgba(86, 11, 173, 1) 0%,
+    rgba(109, 170, 242, 1) 100%
+  );
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  max-height: 600px;
+  max-width: 1000px;
+  height: 100%;
+  width: 100%;
+  border-radius: 35px;
+  box-shadow: 5px 5px 20px 20px rgba(0, 0, 0, 0.288);
+}
+
+.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+  width: 50%;
+}
+
+.signUp strong {
+  font-size: 2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px grey;
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+}
+
+.socials svg {
+  color: rgb(58, 58, 58);
+  text-align: center;
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 80%;
+  color: grey;
+}
+
+form input {
+  background-color: rgba(128, 128, 128, 0.226);
+  padding-left: 20px;
+  height: 40px;
+  width: 100%;
+  border: solid 1px transparent;
+  border-radius: 6px;
+  transition: all 300ms;
+}
+
+form input:hover {
+  border: solid 1px black;
+}
+
+form button {
+  border: none;
+  border-radius: 6px;
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: #4361ee;
+  transition: all 300ms;
+  font-weight: bolder;
+}
+
+form button:hover {
+  background-color: rgb(82, 82, 82);
+}
+
+form section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+form section input {
+  width: 48%;
+}
+
+form #email-error {
+  color: red;
+  text-align: left;
+  width: 100%;
+  font-size: 12px;
+  display: none;
+}
+
+.signIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+  width: 50%;
+  background: #4361ee;
+  border-radius: 30px 100px 100px 30px;
+  color: white;
+  text-align: center;
+}
+
+.signIn strong {
+  font-size: 2rem;
+}
+
+.signIn a {
+  width: 50%;
+}
+
+.signIn button {
+  cursor: pointer;
+  border: solid 1px;
+  background-color: #4361ee;
+  color: white;
+  border-radius: 6px;
+  height: 40px;
+  width: 100%;
+  font-weight: bolder;
+  transition: all 300ms;
+}
+
+.signIn button:hover {
+  background-color: white;
+  color: rgb(82, 82, 82);
+  border: none;
+}
