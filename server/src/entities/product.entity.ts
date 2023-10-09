@@ -13,7 +13,10 @@ export class Product {
   price: number;
 
   @Column()
-  tag: string
+  tag: string;
+
+  @Column({ name: "stock_quantity" })
+  stockQuantity: number;
 
   @OneToMany((type) => OrderItems, (orderItems) => orderItems.product)
   ordersItems: Array<OrderItems>;
