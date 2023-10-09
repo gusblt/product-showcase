@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tal da boa? | Dashboard</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,38 +15,56 @@
   </head>
   <body>
     <header>
-      <img
-        id="logo"
-        src="../assets/logo.png"
-        alt="Tal da boa?"
-      />
       <div class="profile">
-        <img
-          id="pfp"
-          src="../assets/userimg.png"
-          alt="Foto de Perfil"
-        />
+        <img id="pfp" src="../assets/userimg.png" alt="Foto de Perfil" />
         <p id="nomeDoUser">Olá, Usuário.</p>
       </div>
     </header>
-    <div class="background">
+
+    <section class="content-wrapper">
       <nav class="sidebar">
+        <img id="logo" src="../assets/logo.png" alt="Tal da boa?" />
         <section class="options">
           <a href="/web/dashboard/">
             <button type="button">Perfil</button>
           </a>
           <a href="/web/dashboard/products/">
-            <button type="button">Produtos</button>
+            <button type="button" class="active">Produtos</button>
           </a>
         </section>
 
         <button type="button" id="logout">Sair</button>
       </nav>
+      <div class="background">
+        <section class="content">
+          <div class="products">
+            <ul>
+              <li>
+                <img
+                  src="https://source.unsplash.com/random?package"
+                  alt="product image"
+                />
 
-      <section class="content">
-        
-      </section>
-    </div>
+                <div class="product-data">
+                  <h2>Product title</h2>
+                  <p>R$00,00</p>
+
+                  <div class="product-tags">
+                    <p>Tag 1</p>
+                    <p>Tag 2</p>
+                  </div>
+                </div>
+
+                <div class="product-actions">
+                  <button>Editar</button>
+                  <button>D</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
   </body>
   <script type="module" src="script.js"></script>
   <script type="module" src="../script.js"></script>

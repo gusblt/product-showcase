@@ -14,27 +14,21 @@
   </head>
   <body>
     <header>
-      <img
-        id="logo"
-        src="./assets/logo.png"
-        alt="Tal da boa?"
-      />
       <div class="profile">
-        <img
-          id="pfp"
-          src="./assets/userimg.png"
-          alt="Foto de Perfil"
-        />
+        <img id="pfp" src="./assets/userimg.png" alt="Foto de Perfil" />
         <p id="nomeDoUser">Olá, Usuário.</p>
       </div>
     </header>
-    <div class="background">
+
+    <section class="content-wrapper">
       <nav class="sidebar">
+        <img id="logo" src="./assets/logo.png" alt="Tal da boa?" />
+
         <section class="options">
           <a href="#">
-            <button type="button">Perfil</button>
+            <button type="button" class="active">Perfil</button>
           </a>
-          <a href="/web//dashboard/products/">
+          <a href="/web/dashboard/products/">
             <button type="button">Produtos</button>
           </a>
         </section>
@@ -42,22 +36,28 @@
         <button type="button" id="logout">Sair</button>
       </nav>
 
-      <section class="content">
-        <div class="user-info">
-          <img
-            id="pfp"
-            src="./assets/6e0dd5ada6707fbeff26d38be9817441.png"
-            alt="Foto de Perfil"
-          />
-          <h3>Nome:</h3>
-          <article id="name">...</article>
-          <h3>Idade:</h3>
-          <article id="age">...</article>
-          <h3>Email:</h3>
-          <article id="email">...</article>
-        </div>
-      </section>
-    </div>
+      <div class="background">
+        <section class="content">
+          <div class="user-info">
+            <img id="pfp" src="./assets/userimg.png" alt="Foto de Perfil" />
+
+            <div class="user-data">
+              <h3>Nome:</h3>
+              <article id="name">...</article>
+              <h3>Idade:</h3>
+              <article id="age">...</article>
+              <h3>Email:</h3>
+              <article id="email">...</article>
+            </div>
+
+            <div class="user-actions">
+              <button type="button">Editar Perfil</button>
+              <button type="button">Deletar Conta</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
   </body>
   <script type="module" src="script.js"></script>
   <script type="module" src="../script.js"></script>

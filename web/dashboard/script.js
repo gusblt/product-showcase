@@ -4,6 +4,7 @@
 // window.reload() ✅
 
 const Logout = () => {
+  console.log("logout");
   localStorage.clear();
   location.reload();
 };
@@ -39,7 +40,8 @@ const SetUserInfo = async () => {
 
   switch (response.status) {
     case 401 || 403:
-      return Logout;
+      console.log("not auth");
+      return Logout();
     case 200:
       document.getElementById("nomeDoUser").innerText =
         "Olá, " + user.name + ".";

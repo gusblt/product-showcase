@@ -16,6 +16,7 @@ export const Login = async (loginInfo) => {
 
 const LoginEvent = async () => {
   const form = document.getElementById("login-form");
+  const error = document.querySelector(".error-message");
   const { email, password } = form;
 
   form.onsubmit = async (evt) => {
@@ -23,11 +24,22 @@ const LoginEvent = async () => {
     const user = { email: email.value, password: password.value };
 
     const response = await Login(user);
-    localStorage.setItem("@taldaboa/userToken", response.token);
 
-    setTimeout(() => {
-      window.location.href = "/web/dashboard/index.html";
-    }, 2000);
+    if (!response.token) {
+      error.style.display = "block";
+      email.classList.add("error");
+      password.classList.add("error");
+    } else {
+      localStorage.setItem("@taldaboa/userToken", response.token);
+
+      error.style.display = "none";
+      email.classList.remove("error");
+      password.classList.remove("error");
+
+      setTimeout(() => {
+        window.location.href = "/web/dashboard/index.html";
+      }, 2000);
+    }
   };
 };
 

@@ -111,6 +111,17 @@ form button:hover {
   background-color: rgb(82, 82, 82);
 }
 
+form .error {
+  border: 1px solid red;
+}
+
+form .error-message {
+  display: none;
+  width: 100%;
+  color: red;
+  font-size: 12px;
+}
+
 .signUp {
   display: flex;
   flex-direction: column;
@@ -134,7 +145,7 @@ form button:hover {
 }
 
 .signUp a button {
-  cursor:pointer;
+  cursor: pointer;
   border: solid 1px;
   background-color: #4361ee;
   color: white;
