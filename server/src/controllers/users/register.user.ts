@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userRegisterService } from "../services/register.user";
+import { userRegisterService } from "../../services/users/register.user";
 import { instanceToPlain } from "class-transformer";
 
 export interface IUserRegister {
@@ -11,7 +11,6 @@ export interface IUserRegister {
 
 export const userRegisterController = async (req: Request, res: Response) => {
   const body: IUserRegister = req.body;
-  console.log(body);
 
   const createdUser = await userRegisterService(body);
 

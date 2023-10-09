@@ -1,7 +1,7 @@
-import { IUserAuth } from "../controllers/auth.user";
-import { AppDataSource } from "../data-source";
-import { User } from "../entities/user.entity";
-import { AppError } from "../errors/appError";
+import { IUserAuth } from "../../controllers/users/auth.user";
+import { AppDataSource } from "../../data-source";
+import { User } from "../../entities/user.entity";
+import { AppError } from "../../errors/appError";
 import { compareSync } from "bcrypt";
 import * as jwt from "jsonwebtoken";
 
