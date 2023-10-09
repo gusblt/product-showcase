@@ -9,14 +9,17 @@ export class Product {
   @Column({ length: 256 })
   title: string;
 
-  @Column()
+  @Column({type: "float"})
   price: number;
 
   @Column()
   tag: string;
 
-  @Column({ name: "stock_quantity" })
+  @Column({ name: "stock_quantity", default: 0 })
   stockQuantity: number;
+
+  @Column()
+  imgUrl: string
 
   @OneToMany((type) => OrderItems, (orderItems) => orderItems.product)
   ordersItems: Array<OrderItems>;

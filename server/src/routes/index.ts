@@ -4,6 +4,7 @@ import { userAuthController } from "../controllers/users/auth.user";
 import { AuthMiddleware } from "../middlewares/auth.middleware";
 import { listUserController } from "../controllers/users/list.user";
 import { createProductController } from "../controllers/products/create.product";
+import { listProductController } from "../controllers/products/list.product";
 
 export const appRoutes = (app: Express) => {
   userRoutes(app);
@@ -20,5 +21,5 @@ const userRoutes = (app: Express) => {
 const productRoutes = (app: Express) => {
   app.post("/product", AuthMiddleware, createProductController);
 
-  app.get("/product", )
+  app.get("/product", listProductController)
 };
