@@ -7,6 +7,7 @@ import { createProductController } from "../controllers/products/createProduct.c
 import { listProductController } from "../controllers/products/listProducts.controller";
 import { updateProductController } from "../controllers/products/updateProduct.controller";
 import { createOrderController } from "../controllers/orders/createOrder.controller";
+import { listOrdersByUserController } from "../controllers/orders/listOrdersByUser.controller";
 
 export const appRoutes = (app: Express) => {
   userRoutes(app);
@@ -30,4 +31,6 @@ const productRoutes = (app: Express) => {
 
 const orderRoutes = (app: Express) => {
   app.post("/orders", AuthMiddleware, createOrderController);
+
+  app.get("/orders", AuthMiddleware, listOrdersByUserController);
 };
