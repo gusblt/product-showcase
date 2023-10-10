@@ -18,7 +18,7 @@ export class Product {
   @Column({ name: "stock_quantity", default: 0 })
   stockQuantity: number;
 
-  @Column()
+  @Column({name: "img_url"})
   imgUrl: string
 
   @OneToMany((type) => OrderItems, (orderItems) => orderItems.product)
