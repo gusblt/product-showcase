@@ -6,10 +6,12 @@ import { listUserController } from "../controllers/users/list.user";
 import { createProductController } from "../controllers/products/createProduct.controller";
 import { listProductController } from "../controllers/products/listProducts.controller";
 import { updateProductController } from "../controllers/products/updateProduct.controller";
+import { createOrderController } from "../controllers/orders/createOrder.controller";
 
 export const appRoutes = (app: Express) => {
   userRoutes(app);
   productRoutes(app);
+  orderRoutes(app);
 };
 
 const userRoutes = (app: Express) => {
@@ -24,4 +26,8 @@ const productRoutes = (app: Express) => {
   app.patch("/product/:id", AuthMiddleware, updateProductController);
 
   app.get("/product", listProductController);
+};
+
+const orderRoutes = (app: Express) => {
+  app.post("/orders", AuthMiddleware, createOrderController);
 };
