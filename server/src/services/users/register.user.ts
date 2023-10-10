@@ -1,7 +1,7 @@
-import { IUserRegister } from "../controllers/register.user";
-import { AppDataSource } from "../data-source";
-import { User } from "../entities/user.entity";
-import { AppError } from "../errors/appError";
+import { IUserRegister } from "../../controllers/users/register.user";
+import { AppDataSource } from "../../data-source";
+import { User } from "../../entities/user.entity";
+import { AppError } from "../../errors/appError";
 import { hashSync } from "bcrypt";
 
 export const userRegisterService = async (body: IUserRegister) => {

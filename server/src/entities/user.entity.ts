@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Exclude } from "class-transformer";
+import { Order } from "./order.entity";
 
 @Entity("users")
 export class User {
@@ -18,4 +19,7 @@ export class User {
 
   @Column()
   age: number;
+
+  @OneToMany((type) => Order, (orders) => orders.user, { eager: true })
+  orders: Array<Order>;
 }

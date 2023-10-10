@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userAuthService } from "../services/auth.user";
+import { userAuthService } from "../../services/users/auth.user";
 
 export interface IUserAuth {
   email: string;

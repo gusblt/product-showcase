@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { listUserService } from "../services/list.user";
+import { listUserService } from "../../services/users/list.user";
 import { instanceToPlain } from "class-transformer";
 
 export const listUserController = async (req: Request, res: Response) => {

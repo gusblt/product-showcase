@@ -1,10 +1,9 @@
-import { AppDataSource } from "../data-source";
-import { User } from "../entities/user.entity";
-import { AppError } from "../errors/appError";
+import { AppDataSource } from "../../data-source";
+import { User } from "../../entities/user.entity";
+import { AppError } from "../../errors/appError";
 
 export const listUserService = async (id: string) => {
   const userRepository = AppDataSource.getRepository(User);
-  console.log(id)
 
   const user = await userRepository.findOneBy({ id });
 
