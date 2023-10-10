@@ -8,6 +8,7 @@ import { listProductController } from "../controllers/products/listProducts.cont
 import { updateProductController } from "../controllers/products/updateProduct.controller";
 import { createOrderController } from "../controllers/orders/createOrder.controller";
 import { listOrdersByUserController } from "../controllers/orders/listOrdersByUser.controller";
+import { listOrdersByIdController } from "../controllers/orders/listOrdersById.controller";
 
 export const appRoutes = (app: Express) => {
   userRoutes(app);
@@ -33,4 +34,5 @@ const orderRoutes = (app: Express) => {
   app.post("/orders", AuthMiddleware, createOrderController);
 
   app.get("/orders", AuthMiddleware, listOrdersByUserController);
+  app.get("/orders/:id", AuthMiddleware, listOrdersByIdController);
 };
