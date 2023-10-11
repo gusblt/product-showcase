@@ -2,15 +2,8 @@ import { Login } from "./login.js";
 
 const base_url = "http://localhost:3000";
 
-const Register = async (registerInfo) => {
-  const response = await fetch(base_url + "/user", {
-    method: "POST",
-    body: JSON.stringify(registerInfo),
-    mode: "cors",
-    headers: { "Content-Type": "application/json" },
-  });
-  return response.json();
-};
+const Register = async (registerInfo) =>
+  axios.post(`${base_url}/user`, registerInfo);
 
 const RegisterEvent = async () => {
   const form = document.getElementById("register-form");
@@ -44,9 +37,9 @@ const RegisterEvent = async () => {
       password: newUser.password,
     });
 
-    localStorage.setItem("@taldaboa/userToken", token.token );
+    localStorage.setItem("@taldaboa/userToken", token.token);
 
-    setTimeout(window.location.reload(), 500)
+    setTimeout(window.location.reload(), 500);
   };
 };
 
