@@ -9,22 +9,22 @@ export const listProductService = async (
 ) => {
   const productRepository = AppDataSource.getRepository(Product);
 
-  const products = await productRepository.find();
+  page = parseInt(page);
+  const startIndex = page * limit - limit;
 
-  const startIndex = (page - 1) * limit;
-  const endIndex = page * limit;
+  const products = await productRepository.find({
+    take: limit,
+    skip: startIndex,
+  });
 
-  const productsByPage = products.slice(startIndex, endIndex);
-  const lastPage = products.length / 10 + 1;
-
-  if (page > lastPage) throw new AppError(404, "Page not found");
+  if (products.length <= 0) throw new AppError(404, "Page not found!");
 
   if (onlyStock === "true") {
-    const productsWithStock = productsByPage.filter(
+    const productsWithStock = products.filter(
       (product) => product.stockQuantity >= 1
     );
     return { page: page, products: productsWithStock };
   }
 
-  return { currentPage: page, products: productsByPage };
+  return { currentPage: page, products: products };
 };

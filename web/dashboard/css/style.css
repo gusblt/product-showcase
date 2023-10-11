@@ -13,7 +13,7 @@
 
 .background {
   display: flex;
-  height: calc(100vh - 100px);
+  height: max-content;
   width: 100%;
   padding: 0 25px;
 }
