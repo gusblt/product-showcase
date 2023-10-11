@@ -1,4 +1,5 @@
 import {
+  Column,
   CreateDateColumn,
   Entity,
   ManyToOne,
@@ -7,6 +8,7 @@ import {
 } from "typeorm";
 import { User } from "./user.entity";
 import { OrderItems } from "./orderItems.entity";
+import { IOrderStatus } from "../interfaces/order.interface";
 
 @Entity("orders")
 export class Order {
@@ -16,9 +18,12 @@ export class Order {
   @CreateDateColumn()
   date: Date;
 
+  @Column({ default: "pending" })
+  status: string;
+
   @ManyToOne((type) => User, (user) => user.orders)
   user: User;
 
-  @OneToMany((type) => OrderItems, (orderItems) => orderItems.order)
+  @OneToMany((type) => OrderItems, (orderItems) => orderItems.order, {eager: true})
   orderItems: Array<OrderItems>;
 }
