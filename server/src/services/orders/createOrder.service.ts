@@ -56,6 +56,8 @@ export const createOrderService = async (
       stockQuantity: getProduct!.stockQuantity - orderItem.quantity,
     });
 
+    newOrder.totalPrice = orderItem.quantity * getProduct!.price;
+
     await orderRepository.save(newOrder);
     await orderItemsRepository.save({ ...orderItem, order: newOrder });
   }
