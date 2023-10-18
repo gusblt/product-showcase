@@ -35,6 +35,6 @@ const orderRoutes = (app: Express) => {
   app.post("/orders", AuthMiddleware, createOrderController);
 
   app.get("/orders/user", AuthMiddleware, listOrdersByUserController);
-  app.get("/orders/:id", AuthMiddleware, listOrdersByIdController);
+  app.get("/order/:id", AuthMiddleware, listOrdersByIdController);
   app.get("/orders", AuthMiddleware, listOrdersController);
 };

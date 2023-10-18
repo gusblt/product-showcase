@@ -21,9 +21,14 @@ export class Order {
   @Column({ default: "pending" })
   status: string;
 
-  @ManyToOne((type) => User, (user) => user.orders)
+  @Column({ name: "total_price", type: "float", default: 0 })
+  totalPrice: number;
+
+  @ManyToOne((type) => User, (user) => user.orders, { eager: true })
   user: User;
 
-  @OneToMany((type) => OrderItems, (orderItems) => orderItems.order, {eager: true})
+  @OneToMany((type) => OrderItems, (orderItems) => orderItems.order, {
+    eager: true,
+  })
   orderItems: Array<OrderItems>;
 }

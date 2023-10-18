@@ -20,6 +20,6 @@ export class User {
   @Column()
   age: number;
 
-  @OneToMany((type) => Order, (orders) => orders.user, { eager: true })
+  @OneToMany((type) => Order, (orders) => orders.user)
   orders: Array<Order>;
 }

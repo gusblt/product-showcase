@@ -40,13 +40,48 @@
       </nav>
       <div class="background">
         <section class="content">
+          <table class="products">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Usuário</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Detalhes</th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+        </section>
+      </div>
+    </section>
+
+    <div class="modal-wrapper">
+      <div class="modal-container">
+        <section class="modal-header">
+          <p>Detalhes do pedido</p>
+          <button id="closeButton">X</button>
+        </section>
+
+        <section class="modal-content">
+          <p id="orderId">id:</p>
+
+          <div id="userData">
+            <p id="userName">Nome:</p>
+            <p id="userEmail">Email:</p>
+          </div>
+
           <div class="products">
-            <ul id="products-list">
+            <p>Produtos:</p>
+
+            <ul>
             </ul>
           </div>
         </section>
       </div>
-    </section>
+    </div>
   </body>
   <script type="module" src="script.js"></script>
   <script type="module" src="../script.js"></script>
